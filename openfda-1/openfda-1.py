@@ -23,4 +23,19 @@ print("ID: ", medicamento_info["id"])
 print("PROPOSITO: ",medicamento_info["purpose"][0])
 print("FABRICANTE: ",medicamento_info["openfda"]["manufacturer_name"][0])
 
-#Programa2 
+#Programa2
+
+connector.request("GET", REST_NOMBRE_RECURSO + "?limit=10", None, headers)
+print("  *CONSULTA DE 10 MEDICAMENTOS*  ")
+response2 = connector.getresponse()
+
+print(response2.status, response2.reason)
+
+drugs_json = response2.read().decode("utf-8")
+connector.close()
+
+drugs = json.loads(drugs_json)
+drugs = drugs["results"]
+
+for drug in drugs:
+    print("IDENTIFICADOR:",drug["id"])
