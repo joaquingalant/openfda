@@ -58,8 +58,7 @@ def InfForClient(clientsocket):
     cabecera += "Content-Length: {}\n".format(len(str.encode(contenido)))                                                   
     mensaje_respuesta = str.encode(linea_inicial + cabecera + "\n" + contenido)                                             
     clientsocket.send(mensaje_respuesta)                                                                                    
-                                                                                                                            
-                                                                                                                            
+                                                                                                                                                                                                                                                      
                                                                                                                             
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)                                                            
 serversocket.bind((IP, PORT)) #Sirve para enlazar el IP con el Puerto                                                       
