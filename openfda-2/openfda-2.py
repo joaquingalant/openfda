@@ -5,7 +5,7 @@ headers = {"User-Agent": "http-client"}
 
 REST_SERVIDOR= "api.fda.gov"
 REST_RECURSO = "/drug/label.json"
-CONSULTA= "/?search=active_ingredient:acetylsalicylic&limit=20"
+CONSULTA= "/?search=active_ingredient:acetylsalicylic&limit=100"
 
 connector = http.client.HTTPSConnection(REST_SERVIDOR)
 connector.request("GET", REST_RECURSO + CONSULTA, None, headers)
