@@ -5,7 +5,6 @@ import json
 headers= {"User-Agent" : "http-client"}
 REST_NOMBRE_SERVIDOR = "api.fda.gov"
 REST_NOMBRE_RECURSO = "/drug/label.json"
-DEBUG = True
 
 connector = http.client.HTTPSConnection("api.fda.gov")
 connector.request("GET", REST_NOMBRE_RECURSO, None, headers)
